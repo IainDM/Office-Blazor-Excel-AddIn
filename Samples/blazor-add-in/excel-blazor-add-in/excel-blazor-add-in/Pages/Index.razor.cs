@@ -25,7 +25,16 @@ namespace BlazorAddIn.Pages
         /// <summary>
         /// Basic function to invoke inserting `Hello world!` text.
         /// </summary>
+        /// 
+
         private async Task HelloButton() =>
             await JSModule.InvokeVoidAsync("helloButton");
+
+      //  private async Task HelloButton()
+      //  {
+      ////      var sheetValues = await JSModule.InvokeAsync("sheetValues");
+      //      var cellFormula = await JSModule.InvokeAsync<string>("formulaOfSelected", null);
+      //      System.Diagnostics.Debug.WriteLine(cellFormula);
+      //  }
     }
 }

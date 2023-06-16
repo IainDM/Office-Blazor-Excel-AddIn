@@ -13,3 +13,33 @@ export function helloButton() {
         return context.sync();
     });
 }
+
+export function sheetValues() {
+    return Excel.run(function (context) {
+        const sheet = context.workbook.worksheets.getActiveWorksheet();
+        const usedRange = sheet.getUsedRange();
+        usedRange.load("values");
+
+        return context.sync().then(function () {
+            return usedRange.values;
+        });
+    }).catch(function (error) {
+        console.log(error);
+    });
+}
+
+export function formulaOfSelected() {
+    return Excel.run(function (context) {
+        const selectedRange = context.workbook.getSelectedRange();
+        const cellToAnalyse = selectedRange.getCell(0, 0);
+
+        // Load the formula of the selected cell
+        cellToAnalyse.load("formulas");
+
+        return context.sync().then(function () {
+            return cellToAnalyse.formulas;
+        });
+    }).catch(function (error) {
+        console.log(error);
+    });
+}
