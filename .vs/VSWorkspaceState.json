@@ -4,7 +4,9 @@
     "\\Excel-custom-functions",
     "\\Samples",
     "\\Samples\\blazor-add-in",
-    "\\Samples\\blazor-add-in\\excel-blazor-add-in"
+    "\\Samples\\blazor-add-in\\excel-blazor-add-in",
+    "\\Samples\\blazor-add-in\\excel-blazor-add-in\\excel-blazor-add-in",
+    "\\Samples\\blazor-add-in\\excel-blazor-add-in\\excel-blazor-add-in\\Pages"
   ],
   "SelectedNode": "\\Samples\\blazor-add-in\\excel-blazor-add-in\\excel-blazor-add-in.sln",
   "PreviewInSolutionExplorer": false

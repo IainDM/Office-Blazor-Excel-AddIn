@@ -24,7 +24,10 @@ export function sheetValues() {
             return usedRange.values;
         });
     }).catch(function (error) {
-        console.log(error);
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
     });
 }
 
@@ -40,6 +43,9 @@ export function formulaOfSelected() {
             return cellToAnalyse.formulas;
         });
     }).catch(function (error) {
-        console.log(error);
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
     });
 }

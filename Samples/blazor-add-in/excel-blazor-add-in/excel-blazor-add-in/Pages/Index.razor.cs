@@ -27,14 +27,20 @@ namespace BlazorAddIn.Pages
         /// </summary>
         /// 
 
-        private async Task HelloButton() =>
+        private async Task HelloButton()
+        {
             await JSModule.InvokeVoidAsync("helloButton");
 
-      //  private async Task HelloButton()
-      //  {
-      ////      var sheetValues = await JSModule.InvokeAsync("sheetValues");
-      //      var cellFormula = await JSModule.InvokeAsync<string>("formulaOfSelected", null);
-      //      System.Diagnostics.Debug.WriteLine(cellFormula);
-      //  }
+            //get all the values from the active sheet
+            var sheetValues = await JSModule.InvokeAsync<string>("sheetValues");
+
+            //get the formula of the active cell
+            var cellFormula = await JSModule.InvokeAsync<object>("formulaOfSelected");
+            System.Diagnostics.Debug.WriteLine(cellFormula);
+
+            //do some processing here
+
+            //write the value back to the Office Addin window
+        }
     }
 }
